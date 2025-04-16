@@ -1,0 +1,50 @@
+body {
+  background: linear-gradient(90deg, #e0eafc 0%, #cfdef3 100%);
+  font-family: 'Comic Sans MS', 'Comic Sans', Verdana, Arial, sans-serif;
+  color: #222;
+}
+
+h1, .title {
+  font-family: 'Comic Sans MS', 'Comic Sans', Verdana, Arial, sans-serif;
+  color: #003399;
+  text-shadow: 2px 2px 0 #fff, 4px 4px 8px #aaa;
+  border-bottom: 3px double #003399;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+}
+
+.box {
+  border: 3px ridge #003399;
+  background: #f0f8ff;
+  box-shadow: 4px 4px 12px #888;
+  padding: 16px;
+}
+
+.button.is-info {
+  background: linear-gradient(180deg, #b3d1ff 0%, #6699cc 100%);
+  border: 2px outset #003399;
+  color: #003399;
+  font-weight: bold;
+  text-shadow: 1px 1px 0 #fff;
+}
+
+.button.is-info:hover {
+  background: #003399;
+  color: #fff;
+}
+
+.tag.is-success {
+  background: #90ee90;
+  color: #006400;
+  border: 2px inset #006400;
+  font-family: 'Comic Sans MS', 'Comic Sans', Verdana, Arial, sans-serif;
+}
+
+.level {
+  border-bottom: 1px dashed #003399;
+  padding: 8px 0;
+}
+
+.checkbox input[type="checkbox"] {
+  accent-color: #003399;
+}

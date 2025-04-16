@@ -1,48 +1,75 @@
-# Astro Starter Kit: Basics
+# 🐦 Bird Checklist (Astro + React + Bulma + Deno KV)
 
-```sh
-npm create astro@latest -- --template basics
+Make your birding life easier, amigo!  
+This is a **bird checklist** web app built with [Astro](https://astro.build), React, Bulma CSS, and persistent storage on [Deno KV](https://deno.com/kv) (runs great on [Deno Deploy](https://deno.com/deploy)).  
+Super lightweight, static, and ready for the next level.
+
+---
+
+## 🚀 Getting Started
+
+**Local Dev (with mock Deno KV):**
+
+```bash
+npm install
+npm run dev
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+> *Note: For full persistence, deploy to Deno Deploy!*
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+---
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Features
 
-## 🚀 Project Structure
+- List of birds with “Mark as Seen” action (¡visto, compadre!)
+- Filter to show only birds you’ve spotted
+- Modern, responsive UI with Bulma
+- Astro + React: static-site fast, interactive where you need it
+- **Persistent storage** via Deno KV (on Deno Deploy)
 
-Inside of your Astro project, you'll see the following folders and files:
+---
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+## 🛣️ Roadmaps (el futuro, pana!)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+### Persistent Storage: Key-Value Database
 
-## 🧞 Commands
+**Goal:** Let users keep their bird checklist even when they come back later, using a key-value database that works with Deno Deploy or other cheap/free hosts.
 
-All commands are run from the root of the project, from a terminal:
+#### Options
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+- **Deno KV (Recommended for Deno Deploy):**  
+  Built-in, super easy to use, 100% free for most hobby projects.
+- **Upstash Redis:**  
+  Managed Redis, free tier available, works great with edge/serverless.
+- **Cloudflare Workers KV:**  
+  Killer for global edge apps, generous free tier, but more eventual-consistency.
 
-## 👀 Want to learn more?
+#### Next Steps
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [ ] **User Auth:**  
+   Use cookies or GitHub/Google login for per-user lists.
+- [ ] **Bird Data API:**  
+   Fetch real bird info, images, and fun facts from an open API.
+- [ ] **Mobile PWA Support:**  
+   Install the app on your phone—tómalo contigo everywhere!
+- [ ] **Internationalization:**  
+   ¡Español, Deutsch, français—bring all the birder homies!
+- [ ] **Export/Import:**  
+   Download your sightings or upload from another tracker.
+
+PRs, ideas, and “oye, try this” always welcome. ¡Vamos pájaros!
+
+---
+
+## Deploying to Deno Deploy
+
+1. [Sign up for Deno Deploy](https://deno.com/deploy)
+2. Push this repo to GitHub
+3. Click “New Project” > import this repo
+4. Done! 🚀
+
+---
+
+## License
+
+MIT.  
