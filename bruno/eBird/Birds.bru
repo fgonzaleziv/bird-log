@@ -1,0 +1,16 @@
+meta {
+  name: Birds
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://api.ebird.org/v2/ref/taxonomy/ebird?species=bbwduc&fmt=json
+  body: none
+  auth: inherit
+}
+
+params:query {
+  species: bbwduc
+  fmt: json
+}
