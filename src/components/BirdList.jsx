@@ -1,5 +1,6 @@
 import { h } from 'preact';
 import { useState } from 'preact/hooks';
+import ActionLog from './ActionLog';
 
 // Small, fast, and clean: hardcoded birdies for now
 const BIRDS = [
@@ -38,28 +39,15 @@ export default function BirdList() {
     : BIRDS;
 
   return (
-    <div style={{ position: 'relative' }}>
+    <div>
       <button
         onClick={() => setEditMode((v) => !v)}
         title="Toggle Edit Mode"
-        style={{
-          position: 'absolute',
-          top: 0,
-          right: 0,
-          background: editMode ? '#ffe066' : '#f5f5f5',
-          border: '1px solid #ccc',
-          borderRadius: 6,
-          padding: '6px 10px',
-          fontSize: 18,
-          cursor: 'pointer',
-          color: editMode ? '#b8860b' : '#666',
-          boxShadow: editMode ? '0 0 6px #ffe066' : 'none',
-          transition: 'all 0.2s',
-        }}
+        className={`button is-small is-pulled-right ${editMode ? 'has-background-warning-light has-text-warning-dark' : ''}`}
       >
         ✏️ {editMode ? 'Editing' : ''}
       </button>
-      <div className="field">
+      <div className="field mt-5">
         <label className="checkbox">
           <input
             type="checkbox"
@@ -71,7 +59,7 @@ export default function BirdList() {
       </div>
       <ul className="box">
         {birdsToShow.map((bird) => (
-          <li key={bird.id} className="level is-mobile" style={{ marginBottom: 8 }}>
+          <li key={bird.id} className="level is-mobile mb-2">
             <span className="level-left">{bird.name}</span>
             <span className="level-right">
               {seen[bird.id] ? (
@@ -98,20 +86,7 @@ export default function BirdList() {
           </li>
         ))}
       </ul>
-      {/* Log of button presses, for debugging/dev only */}
-      <div style={{ marginTop: 16, fontSize: 12, color: '#666' }}>
-        <strong>Action Log:</strong>
-        <ul>
-          {log.map((entry, idx) => {
-            const bird = BIRDS.find(b => b.id === entry.id);
-            return (
-              <li key={idx}>
-                {bird ? bird.name : `Bird #${entry.id}`} {entry.action} at {entry.time}
-              </li>
-            );
-          })}
-        </ul>
-      </div>
+      <ActionLog log={log} birds={BIRDS} />
     </div>
   );
 }
