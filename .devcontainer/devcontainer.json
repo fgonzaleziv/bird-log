@@ -1,0 +1,14 @@
+{
+	"image": "mcr.microsoft.com/devcontainers/universal:2",
+	"features": {
+		"ghcr.io/astronomer/devcontainer-features/astro-cli:1": {}
+	},
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"astro-build.astro-vscode",
+				"DavidAnson.vscode-markdownlint"
+			]
+		}
+	}
+}
